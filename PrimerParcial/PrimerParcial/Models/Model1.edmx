@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdViviendasItmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAgencia">
+          <Key>
+            <PropertyRef Name="Nit" />
+          </Key>
+          <Property Name="Nit" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Dirrecion" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCliente">
+          <Key>
+            <PropertyRef Name="Documento" />
+          </Key>
+          <Property Name="Documento" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FechaNac" Type="date" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTipoVivienda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblVenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaVenta" Type="date" Nullable="false" />
+          <Property Name="Valor" Type="money" Nullable="false" />
+          <Property Name="MetodoPago" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NitAgencia" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DocumentoCliente" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IdVivienda" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblVivienda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NumCuartos" Type="int" Nullable="false" />
+          <Property Name="NumBaños" Type="int" Nullable="false" />
+          <Property Name="Tamaño" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="NumPisos" Type="int" Nullable="false" />
+          <Property Name="Accesorios" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="IdTipoVivienda" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblVenta__Docume__412EB0B6">
+          <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="1" />
+          <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCliente">
+              <PropertyRef Name="Documento" />
+            </Principal>
+            <Dependent Role="tblVenta">
+              <PropertyRef Name="DocumentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVenta__IdVivi__4222D4EF">
+          <End Role="tblVivienda" Type="Self.tblVivienda" Multiplicity="1" />
+          <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVivienda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblVenta">
+              <PropertyRef Name="IdVivienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVenta__NitAge__403A8C7D">
+          <End Role="tblAgencia" Type="Self.tblAgencia" Multiplicity="1" />
+          <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgencia">
+              <PropertyRef Name="Nit" />
+            </Principal>
+            <Dependent Role="tblVenta">
+              <PropertyRef Name="NitAgencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVivien__IdTip__398D8EEE">
+          <End Role="tblTipoVivienda" Type="Self.tblTipoVivienda" Multiplicity="1" />
+          <End Role="tblVivienda" Type="Self.tblVivienda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTipoVivienda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblVivienda">
+              <PropertyRef Name="IdTipoVivienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdViviendasItmModelStoreContainer">
+          <EntitySet Name="tblAgencia" EntityType="Self.tblAgencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCliente" EntityType="Self.tblCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTipoVivienda" EntityType="Self.tblTipoVivienda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVenta" EntityType="Self.tblVenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVivienda" EntityType="Self.tblVivienda" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblVenta__Docume__412EB0B6" Association="Self.FK__tblVenta__Docume__412EB0B6">
+            <End Role="tblCliente" EntitySet="tblCliente" />
+            <End Role="tblVenta" EntitySet="tblVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVenta__IdVivi__4222D4EF" Association="Self.FK__tblVenta__IdVivi__4222D4EF">
+            <End Role="tblVivienda" EntitySet="tblVivienda" />
+            <End Role="tblVenta" EntitySet="tblVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVenta__NitAge__403A8C7D" Association="Self.FK__tblVenta__NitAge__403A8C7D">
+            <End Role="tblAgencia" EntitySet="tblAgencia" />
+            <End Role="tblVenta" EntitySet="tblVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVivien__IdTip__398D8EEE" Association="Self.FK__tblVivien__IdTip__398D8EEE">
+            <End Role="tblTipoVivienda" EntitySet="tblTipoVivienda" />
+            <End Role="tblVivienda" EntitySet="tblVivienda" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdViviendasItmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAgencia">
+          <Key>
+            <PropertyRef Name="Nit" />
+          </Key>
+          <Property Name="Nit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dirrecion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblVentas" Relationship="Self.FK__tblVenta__NitAge__403A8C7D" FromRole="tblAgencia" ToRole="tblVenta" />
+        </EntityType>
+        <EntityType Name="tblCliente">
+          <Key>
+            <PropertyRef Name="Documento" />
+          </Key>
+          <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNac" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblVentas" Relationship="Self.FK__tblVenta__Docume__412EB0B6" FromRole="tblCliente" ToRole="tblVenta" />
+        </EntityType>
+        <EntityType Name="tblTipoVivienda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblViviendas" Relationship="Self.FK__tblVivien__IdTip__398D8EEE" FromRole="tblTipoVivienda" ToRole="tblVivienda" />
+        </EntityType>
+        <EntityType Name="tblVenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Valor" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="MetodoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NitAgencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocumentoCliente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdVivienda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblAgencia" Relationship="Self.FK__tblVenta__NitAge__403A8C7D" FromRole="tblVenta" ToRole="tblAgencia" />
+          <NavigationProperty Name="tblCliente" Relationship="Self.FK__tblVenta__Docume__412EB0B6" FromRole="tblVenta" ToRole="tblCliente" />
+          <NavigationProperty Name="tblVivienda" Relationship="Self.FK__tblVenta__IdVivi__4222D4EF" FromRole="tblVenta" ToRole="tblVivienda" />
+        </EntityType>
+        <EntityType Name="tblVivienda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumCuartos" Type="Int32" Nullable="false" />
+          <Property Name="NumBaños" Type="Int32" Nullable="false" />
+          <Property Name="Tamaño" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="NumPisos" Type="Int32" Nullable="false" />
+          <Property Name="Accesorios" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="IdTipoVivienda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblTipoVivienda" Relationship="Self.FK__tblVivien__IdTip__398D8EEE" FromRole="tblVivienda" ToRole="tblTipoVivienda" />
+          <NavigationProperty Name="tblVentas" Relationship="Self.FK__tblVenta__IdVivi__4222D4EF" FromRole="tblVivienda" ToRole="tblVenta" />
+        </EntityType>
+        <Association Name="FK__tblVenta__NitAge__403A8C7D">
+          <End Role="tblAgencia" Type="Self.tblAgencia" Multiplicity="1" />
+          <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgencia">
+              <PropertyRef Name="Nit" />
+            </Principal>
+            <Dependent Role="tblVenta">
+              <PropertyRef Name="NitAgencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVenta__Docume__412EB0B6">
+          <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="1" />
+          <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCliente">
+              <PropertyRef Name="Documento" />
+            </Principal>
+            <Dependent Role="tblVenta">
+              <PropertyRef Name="DocumentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVivien__IdTip__398D8EEE">
+          <End Role="tblTipoVivienda" Type="Self.tblTipoVivienda" Multiplicity="1" />
+          <End Role="tblVivienda" Type="Self.tblVivienda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTipoVivienda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblVivienda">
+              <PropertyRef Name="IdTipoVivienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVenta__IdVivi__4222D4EF">
+          <End Role="tblVivienda" Type="Self.tblVivienda" Multiplicity="1" />
+          <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVivienda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblVenta">
+              <PropertyRef Name="IdVivienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdViviendasItmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAgencias" EntityType="Self.tblAgencia" />
+          <EntitySet Name="tblClientes" EntityType="Self.tblCliente" />
+          <EntitySet Name="tblTipoViviendas" EntityType="Self.tblTipoVivienda" />
+          <EntitySet Name="tblVentas" EntityType="Self.tblVenta" />
+          <EntitySet Name="tblViviendas" EntityType="Self.tblVivienda" />
+          <AssociationSet Name="FK__tblVenta__NitAge__403A8C7D" Association="Self.FK__tblVenta__NitAge__403A8C7D">
+            <End Role="tblAgencia" EntitySet="tblAgencias" />
+            <End Role="tblVenta" EntitySet="tblVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVenta__Docume__412EB0B6" Association="Self.FK__tblVenta__Docume__412EB0B6">
+            <End Role="tblCliente" EntitySet="tblClientes" />
+            <End Role="tblVenta" EntitySet="tblVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVivien__IdTip__398D8EEE" Association="Self.FK__tblVivien__IdTip__398D8EEE">
+            <End Role="tblTipoVivienda" EntitySet="tblTipoViviendas" />
+            <End Role="tblVivienda" EntitySet="tblViviendas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVenta__IdVivi__4222D4EF" Association="Self.FK__tblVenta__IdVivi__4222D4EF">
+            <End Role="tblVivienda" EntitySet="tblViviendas" />
+            <End Role="tblVenta" EntitySet="tblVentas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdViviendasItmModelStoreContainer" CdmEntityContainer="bdViviendasItmEntities">
+          <EntitySetMapping Name="tblAgencias">
+            <EntityTypeMapping TypeName="bdViviendasItmModel.tblAgencia">
+              <MappingFragment StoreEntitySet="tblAgencia">
+                <ScalarProperty Name="Nit" ColumnName="Nit" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Dirrecion" ColumnName="Dirrecion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblClientes">
+            <EntityTypeMapping TypeName="bdViviendasItmModel.tblCliente">
+              <MappingFragment StoreEntitySet="tblCliente">
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTipoViviendas">
+            <EntityTypeMapping TypeName="bdViviendasItmModel.tblTipoVivienda">
+              <MappingFragment StoreEntitySet="tblTipoVivienda">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVentas">
+            <EntityTypeMapping TypeName="bdViviendasItmModel.tblVenta">
+              <MappingFragment StoreEntitySet="tblVenta">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="MetodoPago" ColumnName="MetodoPago" />
+                <ScalarProperty Name="NitAgencia" ColumnName="NitAgencia" />
+                <ScalarProperty Name="DocumentoCliente" ColumnName="DocumentoCliente" />
+                <ScalarProperty Name="IdVivienda" ColumnName="IdVivienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblViviendas">
+            <EntityTypeMapping TypeName="bdViviendasItmModel.tblVivienda">
+              <MappingFragment StoreEntitySet="tblVivienda">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NumCuartos" ColumnName="NumCuartos" />
+                <ScalarProperty Name="NumBaños" ColumnName="NumBaños" />
+                <ScalarProperty Name="Tamaño" ColumnName="Tamaño" />
+                <ScalarProperty Name="NumPisos" ColumnName="NumPisos" />
+                <ScalarProperty Name="Accesorios" ColumnName="Accesorios" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="IdTipoVivienda" ColumnName="IdTipoVivienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

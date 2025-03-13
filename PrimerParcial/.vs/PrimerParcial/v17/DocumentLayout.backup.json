@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\models\\tblvivienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\models\\tblvivienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\models\\tblventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\models\\tblventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\models\\tbltipovivienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\models\\tbltipovivienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\models\\tblcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\models\\tblcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\models\\tblagencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\models\\tblagencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\controllers\\viviendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\controllers\\viviendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\clases\\clsvivienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\clases\\clsvivienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|c:\\users\\manue\\onedrive\\escritorio\\primerparcial\\primerparcial\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{D26D977E-CA69-467C-83BF-30EC684DA247}|PrimerParcial\\PrimerParcial.csproj|solutionrelative:primerparcial\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "tblVivienda.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblVivienda.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Models\\tblVivienda.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblVivienda.cs*",
+              "RelativeToolTip": "PrimerParcial\\Models\\tblVivienda.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:13:40.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tblVenta.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblVenta.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Models\\tblVenta.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblVenta.cs*",
+              "RelativeToolTip": "PrimerParcial\\Models\\tblVenta.cs*",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAB0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:13:34.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "tblTipoVivienda.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblTipoVivienda.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Models\\tblTipoVivienda.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblTipoVivienda.cs*",
+              "RelativeToolTip": "PrimerParcial\\Models\\tblTipoVivienda.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAxwB0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:13:30.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tblCliente.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblCliente.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Models\\tblCliente.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblCliente.cs*",
+              "RelativeToolTip": "PrimerParcial\\Models\\tblCliente.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwB8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:13:23.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "tblAgencia.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblAgencia.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Models\\tblAgencia.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\tblAgencia.cs*",
+              "RelativeToolTip": "PrimerParcial\\Models\\tblAgencia.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwB4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:13:09.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ViviendaController.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Controllers\\ViviendaController.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Controllers\\ViviendaController.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Controllers\\ViviendaController.cs",
+              "RelativeToolTip": "PrimerParcial\\Controllers\\ViviendaController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:03:54.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsVivienda.cs",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Clases\\clsVivienda.cs",
+              "RelativeDocumentMoniker": "PrimerParcial\\Clases\\clsVivienda.cs",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Clases\\clsVivienda.cs",
+              "RelativeToolTip": "PrimerParcial\\Clases\\clsVivienda.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAuwDUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T02:02:00.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "PrimerParcial\\Models\\Model1.edmx",
+              "ToolTip": "C:\\Users\\manue\\OneDrive\\Escritorio\\PrimerParcial\\PrimerParcial\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "PrimerParcial\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-03-13T01:58:39.139Z",
+              "EditorCaption": " [Diagram1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdViviendasItmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAgencia">
+    <Key>
+      <PropertyRef Name="Nit" />
+    </Key>
+    <Property Name="Nit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dirrecion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblVentas" Relationship="Self.FK__tblVenta__NitAge__403A8C7D" FromRole="tblAgencia" ToRole="tblVenta" />
+  </EntityType>
+  <EntityType Name="tblCliente">
+    <Key>
+      <PropertyRef Name="Documento" />
+    </Key>
+    <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNac" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblVentas" Relationship="Self.FK__tblVenta__Docume__412EB0B6" FromRole="tblCliente" ToRole="tblVenta" />
+  </EntityType>
+  <EntityType Name="tblTipoVivienda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblViviendas" Relationship="Self.FK__tblVivien__IdTip__398D8EEE" FromRole="tblTipoVivienda" ToRole="tblVivienda" />
+  </EntityType>
+  <EntityType Name="tblVenta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Valor" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MetodoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NitAgencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DocumentoCliente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdVivienda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblAgencia" Relationship="Self.FK__tblVenta__NitAge__403A8C7D" FromRole="tblVenta" ToRole="tblAgencia" />
+    <NavigationProperty Name="tblCliente" Relationship="Self.FK__tblVenta__Docume__412EB0B6" FromRole="tblVenta" ToRole="tblCliente" />
+    <NavigationProperty Name="tblVivienda" Relationship="Self.FK__tblVenta__IdVivi__4222D4EF" FromRole="tblVenta" ToRole="tblVivienda" />
+  </EntityType>
+  <EntityType Name="tblVivienda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumCuartos" Type="Int32" Nullable="false" />
+    <Property Name="NumBaños" Type="Int32" Nullable="false" />
+    <Property Name="Tamaño" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="NumPisos" Type="Int32" Nullable="false" />
+    <Property Name="Accesorios" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="IdTipoVivienda" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblTipoVivienda" Relationship="Self.FK__tblVivien__IdTip__398D8EEE" FromRole="tblVivienda" ToRole="tblTipoVivienda" />
+    <NavigationProperty Name="tblVentas" Relationship="Self.FK__tblVenta__IdVivi__4222D4EF" FromRole="tblVivienda" ToRole="tblVenta" />
+  </EntityType>
+  <Association Name="FK__tblVenta__NitAge__403A8C7D">
+    <End Role="tblAgencia" Type="Self.tblAgencia" Multiplicity="1" />
+    <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgencia">
+        <PropertyRef Name="Nit" />
+      </Principal>
+      <Dependent Role="tblVenta">
+        <PropertyRef Name="NitAgencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblVenta__Docume__412EB0B6">
+    <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="1" />
+    <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCliente">
+        <PropertyRef Name="Documento" />
+      </Principal>
+      <Dependent Role="tblVenta">
+        <PropertyRef Name="DocumentoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblVivien__IdTip__398D8EEE">
+    <End Role="tblTipoVivienda" Type="Self.tblTipoVivienda" Multiplicity="1" />
+    <End Role="tblVivienda" Type="Self.tblVivienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTipoVivienda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblVivienda">
+        <PropertyRef Name="IdTipoVivienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblVenta__IdVivi__4222D4EF">
+    <End Role="tblVivienda" Type="Self.tblVivienda" Multiplicity="1" />
+    <End Role="tblVenta" Type="Self.tblVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVivienda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblVenta">
+        <PropertyRef Name="IdVivienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bdViviendasItmEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAgencias" EntityType="Self.tblAgencia" />
+    <EntitySet Name="tblClientes" EntityType="Self.tblCliente" />
+    <EntitySet Name="tblTipoViviendas" EntityType="Self.tblTipoVivienda" />
+    <EntitySet Name="tblVentas" EntityType="Self.tblVenta" />
+    <EntitySet Name="tblViviendas" EntityType="Self.tblVivienda" />
+    <AssociationSet Name="FK__tblVenta__NitAge__403A8C7D" Association="Self.FK__tblVenta__NitAge__403A8C7D">
+      <End Role="tblAgencia" EntitySet="tblAgencias" />
+      <End Role="tblVenta" EntitySet="tblVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblVenta__Docume__412EB0B6" Association="Self.FK__tblVenta__Docume__412EB0B6">
+      <End Role="tblCliente" EntitySet="tblClientes" />
+      <End Role="tblVenta" EntitySet="tblVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblVivien__IdTip__398D8EEE" Association="Self.FK__tblVivien__IdTip__398D8EEE">
+      <End Role="tblTipoVivienda" EntitySet="tblTipoViviendas" />
+      <End Role="tblVivienda" EntitySet="tblViviendas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblVenta__IdVivi__4222D4EF" Association="Self.FK__tblVenta__IdVivi__4222D4EF">
+      <End Role="tblVivienda" EntitySet="tblViviendas" />
+      <End Role="tblVenta" EntitySet="tblVentas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdViviendasItmModelStoreContainer" CdmEntityContainer="bdViviendasItmEntities">
+    <EntitySetMapping Name="tblAgencias">
+      <EntityTypeMapping TypeName="bdViviendasItmModel.tblAgencia">
+        <MappingFragment StoreEntitySet="tblAgencia">
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Dirrecion" ColumnName="Dirrecion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClientes">
+      <EntityTypeMapping TypeName="bdViviendasItmModel.tblCliente">
+        <MappingFragment StoreEntitySet="tblCliente">
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTipoViviendas">
+      <EntityTypeMapping TypeName="bdViviendasItmModel.tblTipoVivienda">
+        <MappingFragment StoreEntitySet="tblTipoVivienda">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVentas">
+      <EntityTypeMapping TypeName="bdViviendasItmModel.tblVenta">
+        <MappingFragment StoreEntitySet="tblVenta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="MetodoPago" ColumnName="MetodoPago" />
+          <ScalarProperty Name="NitAgencia" ColumnName="NitAgencia" />
+          <ScalarProperty Name="DocumentoCliente" ColumnName="DocumentoCliente" />
+          <ScalarProperty Name="IdVivienda" ColumnName="IdVivienda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblViviendas">
+      <EntityTypeMapping TypeName="bdViviendasItmModel.tblVivienda">
+        <MappingFragment StoreEntitySet="tblVivienda">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumCuartos" ColumnName="NumCuartos" />
+          <ScalarProperty Name="NumBaños" ColumnName="NumBaños" />
+          <ScalarProperty Name="Tamaño" ColumnName="Tamaño" />
+          <ScalarProperty Name="NumPisos" ColumnName="NumPisos" />
+          <ScalarProperty Name="Accesorios" ColumnName="Accesorios" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="IdTipoVivienda" ColumnName="IdTipoVivienda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
